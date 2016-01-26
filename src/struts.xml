@@ -5,7 +5,10 @@
 
 <struts>
 
-
+	<!-- Deploy requiring extension names for Struts -->
+	  
+	<constant name="struts.action.extension" value="action,do,"></constant>
+	
     <package name="default" namespace="/" extends="struts-default">
 
         <action name="TestActionContext" class="com.tony.struts2.action.TestActionContextAction">
@@ -25,6 +28,20 @@
 
         <action name="TestServletAware" class="com.tony.struts2.action.TestServletAwareAction">
         	<result>/test-servletAction.jsp</result>
+        
+        </action>
+
+        <action name="login-ui">
+        	<result>/login.jsp</result>
+        
+        </action>
+
+        <action name="user-login" class="com.tony.struts2.action.UserAction">
+        	<result name="login-success">/login-success.jsp</result>
+        
+        </action>
+        <action name="logout" class="com.tony.struts2.action.UserAction" method="logout">
+        	<result name="logout-success">/login.jsp</result>
         
         </action>
 

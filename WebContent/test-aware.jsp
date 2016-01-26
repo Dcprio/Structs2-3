@@ -1,4 +1,3 @@
-<%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -9,17 +8,15 @@
 </head>
 <body>
 
-	<a href="TestActionContext.action?name=Tony">Test ActionContext</a>
+	<h4>Test Aware Page</h4>
+	
+	application: ${applicationScope.applicationKey2}
 	<br><br>
-	<a href="TestActionAware.do?name=Tonyt">Test Aware</a>
+	request: ${requestScope.requestKey2}
 	<br><br>
-	<a href="TestServletAction">Test ServletAction</a>
+	session: ${sessionScope.sessionKey2}
 	<br><br>
-	<a href="login-ui.do">LoginUI</a>
-<%
-	if(application.getAttribute("date") == null)
-	application.setAttribute("date", new Date());
-%>
-
+	
+	
 </body>
 </html>
