@@ -2,6 +2,8 @@ package com.tony.struts2.action;
 
 import java.util.Map;
 
+import org.apache.struts2.dispatcher.SessionMap;
+
 import com.opensymphony.xwork2.ActionContext;
 
 public class TestActionContextAction {
@@ -27,6 +29,16 @@ public class TestActionContextAction {
 		//2. session
 		Map<String, Object> sessionMap = actionContext.getSession();
 		sessionMap.put("sessionKey", "sessionValue");
+		
+		System.out.println(sessionMap.getClass());
+		
+		if(sessionMap instanceof SessionMap){
+			SessionMap sm = (SessionMap) sessionMap;
+			sm.invalidate();
+			System.out.println("session is invalidate.");
+			
+		}
+		
 		
 		//3. request
 		//There is no such method called getRequest() to get the map of request in ActionContext

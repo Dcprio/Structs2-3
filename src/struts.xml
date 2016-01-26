@@ -12,6 +12,22 @@
         	<result>/test-actionContext.jsp</result>
         
         </action>
+
+        <action name="TestActionAware" class="com.tony.struts2.action.TestAwareAction">
+        	<result>/test-aware.jsp</result>
+        
+        </action>
+        
+        <action name="TestServletAction" class="com.tony.struts2.action.TestServletActionContextAction">
+        	<result>/test-servletAction.jsp</result>
+        
+        </action>
+
+        <action name="TestServletAware" class="com.tony.struts2.action.TestServletAwareAction">
+        	<result>/test-servletAction.jsp</result>
+        
+        </action>
+
     </package>
 
 </struts>

@@ -10,7 +10,12 @@
 <body>
 
 	<a href="TestActionContext.action?name=Tony">Test ActionContext</a>
-
+	<br><br>
+	<a href="TestActionAware.action?name=Tonyt">Test Aware</a>
+	<br><br>
+	<a href="TestServletAction">Test ServletAction</a>
+	<br><br>
+	<a href="TestServletAware">Test ServletAware</a>
 <%
 	if(application.getAttribute("date") == null)
 	application.setAttribute("date", new Date());
