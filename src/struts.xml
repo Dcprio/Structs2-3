@@ -45,6 +45,53 @@
         
         </action>
 
+        <action name="testResult" 
+        	class="com.tony.struts2.action.TestResultAction">
+        	<result name="success" type="dispatcher">/success.jsp</result>
+        	<result name="login" type="redirect">/login.jsp</result>
+        	
+        	
+        	<!-- Redirect to another Action -->
+        	
+        	<!--  <result name="index" type="redirectAction">
+        		<param name="actionName">testAction</param>
+        		<param name="namespace">/index</param>
+        		
+        		</result>
+        	-->
+        	
+        	<!-- "redirect" also can achieve redirectionAction! And it is more convenience  -->
+        	<result name="index" type="redirect">/index/testAction.do</result>
+        	
+        	<!-- redirect to an Action -->
+        	<!--  
+        	<result name="test" type="chain">
+        		<param name = "actionName">testAction</param>
+        		<param name = "namespace">/index</param>
+        	</result>
+        	-->
+        	
+        	<!-- Cannot use type="dispatcher" to redirect to an Action -->
+        	<result name="test">/index/testAction.do</result>
+        	
+        	
+        </action>
+        
+        <action name="testActionSupport">
+        	<result>/testActionSupport.jsp</result>
+        
+        </action>
+        
+
     </package>
+    
+    
+    <package name="testPackage" namespace="/index" extends="struts-default">
+    	<action name="testAction" class="com.tony.struts2.action.TestAction">
+    		<result>/success.jsp</result>
+    	
+    	</action>
+    </package>
+    
 
 </struts>

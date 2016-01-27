@@ -16,6 +16,10 @@
 	<a href="TestServletAction">Test ServletAction</a>
 	<br><br>
 	<a href="login-ui.do">LoginUI</a>
+	<br><br>
+	<a href="testActionSupport.do">Test ActionSupport</a>
+	<br><br>
+	<a href="testResult.do?number=7">Test Result</a>
 <%
 	if(application.getAttribute("date") == null)
 	application.setAttribute("date", new Date());
